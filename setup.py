@@ -104,7 +104,7 @@ test_requirements = [
 setup(
     name='Flask-Log-Request-ID',
     version=version,
-    url='http://github.com/Workable/flask-log-request-id',
+    url='https://github.com/ntropy-network/flask-log-request-id',
     license='MIT',
     author='Konstantinos Paliouras, Ioannis Foukarakis',
     author_email='squarious@gmail.com, ioannis.foukarakis@gmail.com',

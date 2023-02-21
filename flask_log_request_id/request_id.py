@@ -15,12 +15,12 @@ def flask_ctx_get_request_id():
     Get request id from flask's G object
     :return: The id or None if not found.
     """
-    from flask import _app_ctx_stack as stack  # We do not support < Flask 0.9
+    from flask.globals import app_ctx 
 
-    if stack.top is None:
+    if app_ctx is None:
         raise ExecutedOutsideContext()
 
-    g_object_attr = stack.top.app.config['LOG_REQUEST_ID_G_OBJECT_ATTRIBUTE']
+    g_object_attr = current_app.config['LOG_REQUEST_ID_G_OBJECT_ATTRIBUTE']
     return g.get(g_object_attr, None)
 
 
