@@ -20,7 +20,7 @@ def flask_ctx_get_request_id():
     if app_ctx is None:
         raise ExecutedOutsideContext()
 
-    g_object_attr = current_app.config['LOG_REQUEST_ID_G_OBJECT_ATTRIBUTE']
+    g_object_attr = app_ctx.app.config['LOG_REQUEST_ID_G_OBJECT_ATTRIBUTE']
     return g.get(g_object_attr, None)
 
 
